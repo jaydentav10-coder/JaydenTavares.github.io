@@ -3,218 +3,196 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jayden Tavares | Engineering Portfolio</title>
+    <title>Jayden Tavares | Western Engineering</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            /* Western University Purple Accent */
-            --primary: #4f2683; 
-            --primary-light: #7a4eb1;
+            --western-purple: #4f2683; 
+            --accent-gold: #c1a1d2;
             --bg: #ffffff;
             --text: #1f2937;
-            --light-grey: #f3f4f6;
-            --dark-grey: #4b5563;
-            --transition: all 0.3s ease;
+            --light-grey: #f8f9fa;
+            --border: #e5e7eb;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; color: var(--text); line-height: 1.6; background-color: var(--bg); }
+        
+        nav { position: fixed; top: 0; width: 100%; background: white; border-bottom: 3px solid var(--western-purple); z-index: 100; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-weight: 800; color: var(--western-purple); letter-spacing: -1px; }
+        .nav-links a { text-decoration: none; color: var(--text); margin-left: 1.5rem; font-size: 0.9rem; font-weight: 600; }
 
-        body {
-            font-family: 'Inter', sans-serif;
-            line-height: 1.6;
-            color: var(--text);
-            background-color: var(--bg);
-            scroll-behavior: smooth;
-        }
+        header { height: 80vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; background: linear-gradient(135deg, #f5f3f7 0%, #ffffff 100%); padding: 2rem; }
+        h1 { font-size: 4.5rem; color: var(--western-purple); margin-bottom: 0.5rem; }
+        .headline { font-size: 1.5rem; font-weight: 400; color: #4b5563; margin-bottom: 2rem; }
+        
+        section { max-width: 900px; margin: 4rem auto; padding: 0 2rem; }
+        h2 { font-size: 2rem; color: var(--western-purple); border-bottom: 2px solid var(--accent-gold); display: inline-block; margin-bottom: 2rem; }
+        
+        .card { background: var(--light-grey); padding: 2rem; border-radius: 12px; margin-bottom: 1.5rem; border: 1px solid var(--border); }
+        .card-header { display: flex; justify-content: space-between; margin-bottom: 1rem; }
+        .job-title { font-weight: 700; font-size: 1.2rem; }
+        .company { color: var(--western-purple); font-weight: 600; }
+        .date { font-size: 0.9rem; color: #6b7280; }
+        
+        ul { padding-left: 1.2rem; }
+        li { margin-bottom: 0.5rem; }
 
-        /* --- Navigation --- */
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            z-index: 1000;
-            border-bottom: 2px solid var(--primary); /* Added color line */
-        }
+        .skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+        .skill-tag { background: white; border: 1px solid var(--western-purple); color: var(--western-purple); padding: 0.4rem 1rem; border-radius: 20px; display: inline-block; margin: 0.3rem; font-size: 0.85rem; font-weight: 600; }
 
-        .nav-container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 1rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+        .btn { padding: 0.8rem 2rem; border-radius: 8px; text-decoration: none; font-weight: 700; display: inline-block; transition: 0.3s; }
+        .btn-purple { background: var(--western-purple); color: white; border: 2px solid var(--western-purple); }
+        .btn-purple:hover { background: #3a1c61; }
+        .btn-outline { border: 2px solid var(--western-purple); color: var(--western-purple); margin-left: 1rem; }
 
-        .logo { font-weight: 700; font-size: 1.2rem; color: var(--primary); }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--dark-grey);
-            margin-left: 2rem;
-            font-size: 0.9rem;
-            font-weight: 600;
-            transition: var(--transition);
-        }
-
-        .nav-links a:hover { color: var(--primary); }
-
-        /* --- Hero Section --- */
-        #hero {
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 0 2rem;
-            /* Added a subtle purple gradient background */
-            background: linear-gradient(135deg, #fdfcfd 0%, #f3f0f7 100%);
-        }
-
-        .hero-content h1 {
-            font-size: 4rem;
-            font-weight: 800;
-            margin-bottom: 0.5rem;
-            color: var(--primary); /* Name in Purple */
-        }
-
-        .hero-content h2 {
-            font-size: 1.5rem;
-            color: var(--dark-grey);
-            margin-bottom: 2rem;
-        }
-
-        .btn-group { display: flex; gap: 1rem; justify-content: center; }
-
-        .btn {
-            padding: 0.8rem 2rem;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 700;
-            transition: var(--transition);
-            display: inline-block;
-        }
-
-        .btn-primary {
-            background: var(--primary);
-            color: white;
-            box-shadow: 0 4px 14px 0 rgba(79, 38, 131, 0.39);
-        }
-
-        .btn-primary:hover {
-            background: var(--primary-light);
-            transform: translateY(-2px);
-        }
-
-        .btn-outline {
-            border: 2px solid var(--primary);
-            color: var(--primary);
-        }
-
-        .btn-outline:hover {
-            background: rgba(79, 38, 131, 0.05);
-        }
-
-        /* --- Content Sections --- */
-        section { padding: 6rem 2rem; max-width: 1100px; margin: 0 auto; }
-        h3.section-title { font-size: 2.2rem; margin-bottom: 3rem; text-align: center; color: var(--primary); }
-
-        .card {
-            background: white;
-            border-left: 5px solid var(--primary); /* Color accent on cards */
-            padding: 2rem;
-            border-radius: 0 12px 12px 0;
-            margin-bottom: 2rem;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            transition: var(--transition);
-        }
-
-        .card:hover { transform: scale(1.01); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
-
-        .date { color: var(--primary); font-weight: 600; font-size: 0.9rem; }
-
-        .tag {
-            background: #f0ebf7;
-            color: var(--primary);
-            padding: 0.3rem 0.9rem;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 600;
-        }
-
-        /* --- Footer --- */
-        footer { padding: 3rem; text-align: center; background: var(--primary); color: white; }
+        footer { background: var(--western-purple); color: white; padding: 3rem; text-align: center; margin-top: 5rem; }
     </style>
 </head>
 <body>
 
     <nav>
-        <div class="nav-container">
-            <div class="logo">JAYDEN TAVARES</div>
-            <div class="nav-links">
-                <a href="#experience">Experience</a>
-                <a href="#projects">Projects</a>
-                <a href="#skills">Skills</a>
-                <a href="#contact">Contact</a>
-            </div>
+        <div class="logo">JAYDEN TAVARES</div>
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#experience">Experience</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
         </div>
     </nav>
 
-    <section id="hero">
-        <div class="hero-content">
-            <h1>Jayden Tavares</h1>
-            <h2>Engineering Student @ Western University</h2>
-            <p style="max-width: 600px; margin: 0 auto 2.5rem; color: var(--dark-grey);">
-                First-year General Engineering student focused on sustainable design and structural systems. Experienced in architectural consulting and 3D-integrated design projects.
-            </p>
-            <div class="btn-group">
-                <a href="Jayden_Tavares_Engineering_Resume_Polished.pdf" class="btn btn-primary" target="_blank">View Resume</a>
-                <a href="mailto:jaydentav10@gmail.com" class="btn btn-outline">Contact Me</a>
+    <header>
+        <h1>Jayden Tavares</h1>
+        <p class="headline">First-Year Engineering Student @ Western University</p>
+        <div>
+            <a href="Jayden_Tavares_Engineering_Resume_Polished.pdf" class="btn btn-purple" target="_blank">View Full Resume</a>
+            <a href="mailto:jaydentav10@gmail.com" class="btn btn-outline">Email Me</a>
+        </div>
+    </header>
+
+    <section id="about">
+        <h2>Personal Profile</h2>
+        <p>A General Engineering student at Western University with a solid foundation in mathematics and physics through the IB Diploma Programme. I specialize in structured problem-solving, sustainable design, and interdisciplinary collaboration to meet complex client needs.</p>
+    </section>
+
+    <section id="education">
+        <h2>Education</h2>
+        <div class="card">
+            <div class="card-header">
+                <div>
+                    <p class="job-title">Bachelor of Engineering (General)</p>
+                    <p class="company">Western University</p>
+                </div>
+                <p class="date">Expected 2029</p>
             </div>
+            <p><strong>Relevant Coursework:</strong> Calculus I, Physics I (Mechanics), Engineering Fundamentals, Problem Solving & Design.</p>
+        </div>
+        <div class="card">
+            <div class="card-header">
+                <div>
+                    <p class="job-title">International Baccalaureate Diploma</p>
+                    <p class="company">St. Francis Xavier Secondary School</p>
+                </div>
+                <p class="date">Class of 2025</p>
+            </div>
+            <p><strong>HL:</strong> Mathematics (Analysis & Approaches), Physics, Psychology</p>
+            <p><strong>SL:</strong> Chemistry, French, English</p>
+            <p><em>Honours Distinction (All Years)</em></p>
         </div>
     </section>
 
     <section id="experience">
-        <h3 class="section-title">Experience</h3>
-        
+        <h2>Work Experience</h2>
         <div class="card">
-            <div class="date">2024 – PRESENT</div>
-            <h4>Student Intern | Adamson Associates Architects</h4>
-            <p>Observed interdisciplinary coordination and shadowed engineers to understand structural framing systems.</p>
+            <div class="card-header">
+                <p class="job-title">Student Intern</p>
+                <p class="date">2024 – Present</p>
+            </div>
+            <p class="company">Adamson Associates Architects</p>
+            <ul>
+                <li>Shadowed architects and engineers to analyze structural framing systems and consulting workflows.</li>
+                <li>Observed interdisciplinary coordination to meet design standards and client specifications.</li>
+            </ul>
         </div>
-
         <div class="card">
-            <div class="date">2025</div>
-            <h4>Content Marketing Intern | Turbo AI</h4>
-            <p>Translated technical features into clear messaging for broad audiences to improve user engagement.</p>
+            <div class="card-header">
+                <p class="job-title">Content Marketing Intern</p>
+                <p class="date">2025</p>
+            </div>
+            <p class="company">Turbo AI (Remote)</p>
+            <ul>
+                <li>Created promotional content explaining AI study tools and translated technical features for broad audiences.</li>
+            </ul>
+        </div>
+        <div class="card">
+            <div class="card-header">
+                <p class="job-title">Pharmacy Assistant</p>
+                <p class="date">2025</p>
+            </div>
+            <p class="company">Sav-On Drugmart</p>
+            <ul>
+                <li>Managed customer service and workflow accuracy in a high-volume environment.</li>
+            </ul>
         </div>
     </section>
 
     <section id="projects">
-        <h3 class="section-title">Projects</h3>
+        <h2>Engineering Projects</h2>
         <div class="card">
-            <div class="date">WESTERN UNIVERSITY (2025)</div>
-            <h4>Sustainable Stained Glass Design</h4>
-            <p>Led development of a cost-constrained panel ($15 CAD limit), achieving 55% light reduction for a Miami-based client. Integrated Onshape modeling with environmental analysis[cite: 17, 18].</p>
-            <div style="margin-top:10px;">
-                <span class="tag">CAD Modeling</span> <span class="tag">Sustainability</span> <span class="tag">Thermal Analysis</span>
+            <div class="card-header">
+                <p class="job-title">Sustainable Stained Glass Design</p>
+                <p class="date">2025</p>
+            </div>
+            <p class="company">Western University</p>
+            <ul>
+                <li>Led design of a cost-constrained ($15 CAD) panel achieving 55% light reduction.</li>
+                <li>Analyzed UV exposure, heat transfer, and sound transmission for Miami climate conditions.</li>
+                <li>Modeled geometry in Onshape and explored Arduino-based sensor integration.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="leadership">
+        <h2>Leadership & Service</h2>
+        <div class="card">
+            <div class="card-header">
+                <p class="job-title">Chief Squire / Provincial Marshall</p>
+                <p class="date">2017 – 2025</p>
+            </div>
+            <p class="company">Knights of Columbus</p>
+            <p>Recognized as <strong>Provincial Board Member of the Year</strong> and <strong>Squire of the Year</strong> for mentoring members and organizing community initiatives.</p>
+        </div>
+    </section>
+
+    <section id="skills">
+        <h2>Skills</h2>
+        <div class="skills-grid">
+            <div>
+                <p style="font-weight:700; margin-bottom:10px;">Technical</p>
+                <span class="skill-tag">Onshape (CAD)</span>
+                <span class="skill-tag">Mathematical Analysis</span>
+                <span class="skill-tag">Physics Fundamentals</span>
+                <span class="skill-tag">Problem Solving</span>
+            </div>
+            <div>
+                <p style="font-weight:700; margin-bottom:10px;">Professional</p>
+                <span class="skill-tag">Public Speaking</span>
+                <span class="skill-tag">Leadership</span>
+                <span class="skill-tag">Technical Communication</span>
+                <span class="skill-tag">Time Management</span>
             </div>
         </div>
     </section>
 
     <section id="contact">
-        <h3 class="section-title">Get In Touch</h3>
-        <div style="text-align: center;">
-            <p>London, ON | jaydentav10@gmail.com </p>
-            <p style="margin-top: 20px;">
-                <a href="https://www.linkedin.com/in/jayden-tavares" class="btn btn-primary" target="_blank">LinkedIn Profile</a>
-            </p>
-        </div>
+        <h2>Contact</h2>
+        <p><strong>Location:</strong> London, ON [cite: 2]</p>
+        <p><strong>Email:</strong> jaydentav10@gmail.com [cite: 2]</p>
+        <p><strong>LinkedIn:</strong> linkedin.com/in/jayden-tavares [cite: 2]</p>
     </section>
 
     <footer>
-        <p>&copy; 2026 Jayden Tavares | Western Engineering 2029 </p>
+        <p>Built by Jayden Tavares | Western Engineering Class of 2029</p>
     </footer>
 
 </body>
