@@ -23,7 +23,7 @@
         .nav-links a { text-decoration: none; color: var(--text); margin-left: 1.5rem; font-size: 0.9rem; font-weight: 600; transition: 0.3s; }
         .nav-links a:hover { color: var(--western-purple); }
 
-        header { height: 85vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; background: linear-gradient(135deg, #f5f3f7 0%, #ffffff 100%); padding: 2rem; }
+        header { height: 80vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; background: linear-gradient(135deg, #f5f3f7 0%, #ffffff 100%); padding: 2rem; }
         h1 { font-size: clamp(2.5rem, 8vw, 4.5rem); color: var(--western-purple); margin-bottom: 0.5rem; }
         .headline { font-size: 1.5rem; font-weight: 400; color: #4b5563; margin-bottom: 2.5rem; }
         
@@ -31,7 +31,6 @@
         h2 { font-size: 2rem; color: var(--western-purple); border-bottom: 2px solid var(--accent-gold); display: inline-block; margin-bottom: 2rem; }
         
         .card { background: var(--light-grey); padding: 2rem; border-radius: 12px; margin-bottom: 1.5rem; border: 1px solid var(--border); transition: 0.3s; }
-        .card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
         .card-header { display: flex; justify-content: space-between; margin-bottom: 1rem; flex-wrap: wrap; }
         .job-title { font-weight: 700; font-size: 1.2rem; }
         .company { color: var(--western-purple); font-weight: 600; }
@@ -47,14 +46,8 @@
         .btn-purple { background: var(--western-purple); color: white; border: 2px solid var(--western-purple); }
         .btn-purple:hover { background: #3a1c61; transform: translateY(-2px); }
         .btn-outline { border: 2px solid var(--western-purple); color: var(--western-purple); margin-left: 1rem; }
-        .btn-outline:hover { background: rgba(79, 38, 131, 0.05); }
 
         footer { background: var(--western-purple); color: white; padding: 3rem; text-align: center; margin-top: 5rem; }
-        
-        @media (max-width: 600px) {
-            .btn-outline { margin-left: 0; margin-top: 1rem; }
-            .nav-links { display: none; }
-        }
     </style>
 </head>
 <body>
@@ -71,7 +64,7 @@
 
     <header>
         <h1>Jayden Tavares</h1>
-        <p class="headline">Engineering Student @ Western University</p>
+        <p class="headline">First-year General Engineering student at Western University</p>
         <div>
             <a href="Resume.pdf" class="btn btn-purple" target="_blank">View Full Resume</a>
             <a href="mailto:jaydentav10@gmail.com" class="btn btn-outline">Contact Me</a>
@@ -79,21 +72,21 @@
     </header>
 
     <section id="about">
-        <h2>Personal Profile</h2>
-        <p>I am a first-year General Engineering student at Western University with a strong academic foundation in mathematics and physics developed through the International Baccalaureate (IB) Diploma Programme[cite: 4]. I am passionate about architectural consulting, sustainable design, and technology-driven problem solving[cite: 5, 6].</p>
+        <h2>PERSONAL PROFILE</h2>
+        <p>First-year General Engineering student at Western University with a strong academic foundation in mathematics and physics through the International Baccalaureate Diploma Programme[cite: 4]. Experienced in architectural consulting exposure, sustainable design projects, leadership at local and provincial levels, and technology-driven roles[cite: 5]. Demonstrates structured problem-solving, analytical thinking, and interdisciplinary collaboration. Seeking engineering internship opportunities to apply technical and design skills in professional environments[cite: 6].</p>
     </section>
 
     <section id="education">
-        <h2>Education</h2>
+        <h2>EDUCATION</h2>
         <div class="card">
             <div class="card-header">
                 <div>
-                    <p class="job-title">Bachelor of Engineering (General)</p>
+                    <p class="job-title">Bachelor of Engineering (General Engineering)</p>
                     <p class="company">Western University</p>
                 </div>
                 <p class="date">Expected 2029</p>
             </div>
-            <p><strong>Relevant Coursework:</strong> Calculus I, Physics I (Mechanics), Engineering Fundamentals, Problem Solving & Design[cite: 8].</p>
+            <p>Relevant Coursework: Calculus I, Physics I (Mechanics), Engineering Fundamentals, Problem Solving & Design[cite: 8]. Honours Distinction (All Years)[cite: 10].</p>
         </div>
         <div class="card">
             <div class="card-header">
@@ -103,23 +96,42 @@
                 </div>
                 <p class="date">2025</p>
             </div>
-            <p><strong>Higher Level:</strong> Mathematics (Analysis & Approaches), Physics, Psychology[cite: 9].</p>
-            <p><strong>Standard Level:</strong> Chemistry, French, English[cite: 9].</p>
-            <p><em>Honours Distinction (All Years)[cite: 10].</em></p>
+            <p>Higher Level: Mathematics (Analysis & Approaches), Physics, Psychology[cite: 9].</p>
+            <p>Standard Level: Chemistry, French, English[cite: 9].</p>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2>ENGINEERING PROJECTS</h2>
+        <div class="card">
+            <div class="card-header">
+                <p class="job-title">Sustainable Stained Glass Design with Sensor Integration</p>
+                <p class="date">2025</p>
+            </div>
+            <p class="company">Western University</p>
+            <ul>
+                <li>Led development of a cost-constrained stained-glass panel for a Miami apartment client integrating environmental efficiency and geometric limitations[cite: 13].</li>
+                <li>Defined core team values (Quality, Originality, Environmental Efficiency) to guide project objectives and design decisions[cite: 14].</li>
+                <li>Varied panel thickness (0.1 mm-0.8 mm) to achieve 55% light reduction while maintaining structural integrity and print feasibility[cite: 15].</li>
+                <li>Ensured total production cost remained under $15 CAD through detailed material and 3D printer operating cost calculations[cite: 16].</li>
+                <li>Analyzed UV exposure, heat transfer, humidity, and sound transmission relevant to Miami's climate conditions[cite: 17].</li>
+                <li>Modeled geometry in Onshape and explored Arduino-based heat/light sensor integration concepts[cite: 18].</li>
+            </ul>
         </div>
     </section>
 
     <section id="experience">
-        <h2>Work Experience</h2>
+        <h2>WORK EXPERIENCE</h2>
         <div class="card">
             <div class="card-header">
                 <p class="job-title">Student Intern</p>
-                <p class="date">2024 – Present</p>
+                <p class="date">2024-Present</p>
             </div>
             <p class="company">Adamson Associates Architects</p>
             <ul>
-                <li>Shadowed architects and engineers across active projects to understand structural framing systems and consulting workflows[cite: 21, 22].</li>
+                <li>Shadowed architects and engineers across active projects to understand structural framing systems and consulting workflows[cite: 22].</li>
                 <li>Observed interdisciplinary coordination to meet client specifications and design standards[cite: 23].</li>
+                <li>Gained exposure to real-world applications of mathematics, physics, and engineering principles[cite: 24].</li>
             </ul>
         </div>
         <div class="card">
@@ -129,8 +141,9 @@
             </div>
             <p class="company">Turbo AI (Remote)</p>
             <ul>
-                <li>Created short-form promotional content explaining AI-based study tools[cite: 25].</li>
+                <li>Created short-form promotional content explaining AI-based study tools across digital platforms[cite: 25].</li>
                 <li>Translated technical product features into clear messaging for broad audiences[cite: 26].</li>
+                <li>Collaborated with marketing team to improve engagement and growth[cite: 26].</li>
             </ul>
         </div>
         <div class="card">
@@ -140,72 +153,62 @@
             </div>
             <p class="company">Sav-On Drugmart</p>
             <ul>
-                <li>Provided customer service in a high-volume pharmacy environment requiring accuracy and efficiency[cite: 27, 28].</li>
+                <li>Provided customer service in a high-volume pharmacy environment requiring accuracy and efficiency[cite: 28].</li>
+                <li>Maintained organized workflow while supporting daily operations[cite: 29].</li>
             </ul>
         </div>
-    </section>
-
-    <section id="projects">
-        <h2>Engineering Projects</h2>
         <div class="card">
             <div class="card-header">
-                <p class="job-title">Sustainable Stained Glass Design</p>
-                <p class="date">2025</p>
+                <p class="job-title">Private Tutor</p>
+                <p class="date">2022-Present</p>
             </div>
-            <p class="company">Western University</p>
             <ul>
-                <li>Led development of a cost-constrained stained-glass panel for a Miami apartment client ($15 CAD limit)[cite: 12, 13, 16].</li>
-                <li>Varied panel thickness (0.1 mm-0.8 mm) to achieve 55% light reduction while maintaining structural integrity[cite: 15].</li>
-                <li>Analyzed UV exposure, heat transfer, and humidity relevant to Miami climate conditions[cite: 17].</li>
-                <li>Modeled geometry in Onshape and explored Arduino-based sensor integration[cite: 18].</li>
+                <li>Tutored Mathematics and English (IB & Ontario curriculum)[cite: 31].</li>
+                <li>Developed customized learning strategies to improve conceptual understanding and performance[cite: 32].</li>
             </ul>
         </div>
     </section>
 
     <section id="leadership">
-        <h2>Leadership & Awards</h2>
+        <h2>LEADERSHIP & SERVICE</h2>
         <div class="card">
             <div class="card-header">
                 <p class="job-title">Chief Squire / Provincial Marshall</p>
-                <p class="date">2017 – 2025</p>
+                <p class="date">2017-2025</p>
             </div>
             <p class="company">Knights of Columbus</p>
             <ul>
-                <li>Recognized with **Provincial Board Member of the Year** and **Squire of the Year**[cite: 37].</li>
-                <li>Led youth organization at local and provincial levels, coordinating events and mentoring members[cite: 34, 36].</li>
+                <li>Led youth organization at local and provincial levels, coordinating events and mentoring members[cite: 36].</li>
+                <li>Recognized with Provincial Board Member of the Year and Squire of the Year[cite: 37].</li>
+                <li>Organized community initiatives and maintained accountability within executive teams[cite: 38].</li>
             </ul>
         </div>
     </section>
 
     <section id="skills">
-        <h2>Skills</h2>
+        <h2>APPLICABLE SKILLS</h2>
         <div class="skills-grid">
             <div>
-                <p style="font-weight:700; margin-bottom:10px;">Technical [cite: 40]</p>
-                <span class="skill-tag">Onshape (CAD)</span>
+                <p style="font-weight:700; margin-bottom:10px;">Technical</p>
+                <span class="skill-tag">Problem Solving</span>
                 <span class="skill-tag">Mathematical Analysis</span>
                 <span class="skill-tag">Physics Fundamentals</span>
+                <span class="skill-tag">Onshape (CAD)</span>
                 <span class="skill-tag">Microsoft Office</span>
             </div>
             <div>
-                <p style="font-weight:700; margin-bottom:10px;">Professional [cite: 41]</p>
+                <p style="font-weight:700; margin-bottom:10px;">Professional</p>
                 <span class="skill-tag">Leadership</span>
+                <span class="skill-tag">Communication</span>
+                <span class="skill-tag">Teamwork</span>
                 <span class="skill-tag">Public Speaking</span>
-                <span class="skill-tag">Technical Communication</span>
                 <span class="skill-tag">Time Management</span>
             </div>
         </div>
     </section>
 
-    <section id="contact">
-        <h2>Contact</h2>
-        <p><strong>Email:</strong> <a href="mailto:jaydentav10@gmail.com" style="color: var(--western-purple);">jaydentav10@gmail.com</a> [cite: 2]</p>
-        <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/jayden-tavares" target="_blank" style="color: var(--western-purple);">linkedin.com/in/jayden-tavares</a> [cite: 2]</p>
-        <p><strong>Location:</strong> London, ON [cite: 2]</p>
-    </section>
-
     <footer>
-        <p>&copy; 2026 Jayden Tavares | Western Engineering 2029 [cite: 1, 8]</p>
+        <p>&copy; 2026 Jayden Tavares | Western Engineering | jaydentav10@gmail.com</p>
     </footer>
 
 </body>
