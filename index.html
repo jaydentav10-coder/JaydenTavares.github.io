@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jayden Tavares | Engineering Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <style>
+        :root {
+            --primary: #2563eb; /* Subtle Blue Accent */
+            --bg: #ffffff;
+            --text: #1f2937;
+            --light-grey: #f3f4f6;
+            --dark-grey: #4b5563;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background-color: var(--bg);
+            scroll-behavior: smooth;
+        }
+
+        /* --- Navigation --- */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid var(--light-grey);
+        }
+
+        .nav-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 1.2rem;
+            letter-spacing: -0.5px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark-grey);
+            margin-left: 2rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        /* --- Hero Section --- */
+        #hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0 2rem;
+            background: radial-gradient(circle at top right, #f8fafc, #ffffff);
+        }
+
+        .hero-content h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            letter-spacing: -2px;
+        }
+
+        .hero-content h2 {
+            font-size: 1.5rem;
+            color: var(--dark-grey);
+            font-weight: 400;
+            margin-bottom: 2rem;
+        }
+
+        .hero-bio {
+            max-width: 600px;
+            margin: 0 auto 2.5rem;
+            color: var(--dark-grey);
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        .btn {
+            padding: 0.8rem 2rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .btn-primary {
+            background: var(--text);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            border: 1px solid var(--light-grey);
+            color: var(--text);
+        }
+
+        .btn-outline:hover {
+            background: var(--light-grey);
+        }
+
+        /* --- Sections Common --- */
+        section {
+            padding: 6rem 2rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        h3.section-title {
+            font-size: 2rem;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        /* --- Experience & Projects --- */
+        .card {
+            background: var(--bg);
+            border: 1px solid var(--light-grey);
+            padding: 2rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            transition: var(--transition);
+        }
+
+        .card:hover {
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border-color: var(--primary);
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+
+        .card-header h4 { font-size: 1.25rem; }
+        .date { color: var(--dark-grey); font-size: 0.9rem; }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .tag {
+            background: var(--light-grey);
+            padding: 0.2rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        /* --- Skills --- */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-cat h5 {
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.85rem;
+            color: var(--primary);
+        }
+
+        /* --- Footer --- */
+        footer {
+            padding: 4rem 2rem;
+            text-align: center;
+            background: var(--light-grey);
+        }
+
+        .social-links a {
+            font-size: 1.5rem;
+            margin: 0 1rem;
+            color: var(--text);
+            transition: var(--transition);
+        }
+
+        .social-links a:hover { color: var(--primary); }
+
+        /* --- Mobile Responsive --- */
+        @media (max-width: 768px) {
+            .hero-content h1 { font-size: 2.5rem; }
+            .nav-links { display: none; }
+            .card-header { flex-direction: column; }
+        }
+
+        /* Animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="nav-container">
+            <div class="logo">JT.</div>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#experience">Experience</a>
+                <a href="#projects">Projects</a>
+                <a href="#skills">Skills</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <section id="hero">
+        <div class="hero-content">
+            <h1>Jayden Tavares</h1>
+            <h2>Engineering Student @ Western University</h2>
+            <p class="hero-bio">
+                A dedicated first-year engineering student with a background in the International Baccalaureate (IB) program. 
+                Focused on sustainable design, structural systems, and technical problem-solving.
+            </p>
+            <div class="btn-group">
+                <a href="#" class="btn btn-primary" download>View Resume</a>
+                <a href="#contact" class="btn btn-outline">Contact Me</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="reveal">
+        <h3 class="section-title">About Me</h3>
+        <p style="text-align: center; max-width: 800px; margin: 0 auto; font-size: 1.1rem; color: var(--dark-grey);">
+            Currently pursuing my Bachelor of Engineering at Western University[cite: 8]. My academic journey is grounded in a rigorous IB foundation in Physics and Mathematics, which I now apply to real-world challenges[cite: 9]. I am particularly passionate about the intersection of sustainable architecture and modern engineering, seeking to build efficient and environmentally-conscious solutions for the future[cite: 4, 5].
+        </p>
+    </section>
+
+    <section id="experience" class="reveal">
+        <h3 class="section-title">Professional Experience</h3>
+        
+        <div class="card">
+            <div class="card-header">
+                <div>
+                    <h4>Student Intern</h4>
+                    <p>Adamson Associates Architects</p>
+                </div>
+                <span class="date">2024 – Present</span>
+            </div>
+            <ul>
+                <li>Analyzed structural framing systems and engineering workflows by shadowing senior architects on active large-scale projects[cite: 22].</li>
+                <li>Participated in interdisciplinary coordination meetings to ensure client specifications met rigorous design and safety standards[cite: 23].</li>
+                <li>Bridged theoretical physics and mathematics principles with practical on-site engineering applications[cite: 24].</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <div>
+                    <h4>Content Marketing Intern</h4>
+                    <p>Turbo AI (Remote)</p>
+                </div>
+                <span class="date">2025</span>
+            </div>
+            <ul>
+                <li>Developed high-engagement promotional content to demystify AI-based study tools for a global student audience[cite: 25].</li>
+                <li>Collaborated with technical teams to translate complex product features into accessible, value-driven messaging[cite: 26].</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="projects" class="reveal">
+        <h3 class="section-title">Key Projects</h3>
+        
+        <div class="card">
+            <div class="card-header">
+                <div>
+                    <h4>Sustainable Stained Glass Design</h4>
+                    <p>Western University Engineering Design</p>
+                </div>
+                <span class="date">2025</span>
+            </div>
+            <p>Led the development of an environmentally efficient stained-glass panel for a residential client in Miami[cite: 12, 13].</p>
+            <ul style="margin-top: 1rem;">
+                <li>Optimized panel thickness (0.1mm - 0.8mm) to achieve a 55% reduction in light transmission while ensuring 3D-print feasibility[cite: 15].</li>
+                <li>Performed detailed thermal and environmental analysis including UV exposure, heat transfer, and humidity impact[cite: 17].</li>
+                <li>Managed a strict project budget, maintaining production costs under $15 CAD through precise material calculations[cite: 16].</li>
+            </ul>
+            <div class="tags">
+                <span class="tag">Onshape (CAD)</span>
+                <span class="tag">Arduino</span>
+                <span class="tag">Thermal Analysis</span>
+                <span class="tag">Sustainability</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="reveal">
+        <h3 class="section-title">Skills & Competencies</h3>
+        <div class="skills-grid">
+            <div class="skill-cat">
+                <h5>Technical</h5>
+                <p>Mathematical Analysis, Physics (Mechanics), Structural Systems, CAD Modeling[cite: 40].</p>
+            </div>
+            <div class="skill-cat">
+                <h5>Software & Tools</h5>
+                <p>Onshape, Microsoft Office Suite, Arduino Integration, Digital Marketing Tools[cite: 40].</p>
+            </div>
+            <div class="skill-cat">
+                <h5>Professional</h5>
+                <p>Project Leadership, Interdisciplinary Collaboration, Public Speaking, Technical Communication[cite: 41].</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="education" class="reveal">
+        <h3 class="section-title">Education</h3>
+        <div class="card">
+            <div class="card-header">
+                <div>
+                    <h4>Bachelor of Engineering (General Engineering)</h4>
+                    <p>Western University | London, ON</p>
+                </div>
+                <span class="date">Expected 2029</span>
+            </div>
+            <p><strong>Relevant Coursework:</strong> Calculus I, Physics I (Mechanics), Engineering Fundamentals, Problem Solving & Design[cite: 8].</p>
+            <p style="margin-top: 0.5rem;"><strong>Distinctions:</strong> Honours Distinction (All Years)[cite: 10].</p>
+        </div>
+    </section>
+
+    <section id="contact" class="reveal">
+        <h3 class="section-title">Let's Connect</h3>
+        <div style="text-align: center;">
+            <p>Currently seeking 2026 Engineering Internship opportunities.</p>
+            <p style="margin: 2rem 0;">
+                <a href="mailto:jaydentav10@gmail.com" class="btn btn-primary">Email Me</a>
+            </p>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/jayden-tavares" target="_blank">LinkedIn</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Jayden Tavares. Built for Engineering Excellence.</p>
+    </footer>
+
+    <script>
+        // Scroll Reveal Animation
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 150;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+
+        window.addEventListener("scroll", reveal);
+
+        // To check the scroll position on page load
+        reveal();
+    </script>
+</body>
+</html>
